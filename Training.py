@@ -96,7 +96,7 @@ model.fit_generator(
         validation_steps=2)
 
 # to save model weights
-model.save_weights('./models/ai_model.h5')
+model.save_weights('./Models/ai_model.h5')
 # ... code
 K.clear_session()
 # config = model.to_json()
@@ -105,5 +105,5 @@ K.clear_session()
 
 # serialize model to JSON
 model_json = model.to_json()
-with open("model.json", "w") as json_file:
+with open("./Json/model.json", "w") as json_file:
     json_file.write(model_json)

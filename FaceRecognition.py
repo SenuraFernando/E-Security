@@ -13,8 +13,8 @@ cap = cv2.VideoCapture(0)
 # face expression recognizer initialization
 from keras.models import model_from_json
 
-model = model_from_json(open("model.json", "r").read())
-model.load_weights ('./models/ai_model.h5')  # load weights
+model = model_from_json(open("./Json/model.json", "r").read())
+model.load_weights ('./Models/ai_model.h5')  # load weights
 
 # -----------------------------
 names = {

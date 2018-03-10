@@ -75,7 +75,7 @@ model.add(Dense(4))
 model.add(Activation('softmax'))
 
 # load model
-model.load_weights('./models/ai_model.h5')
+model.load_weights('./Models/ai_model.h5')
 
 model.compile(loss='categorical_crossentropy',
               optimizer='adam',
