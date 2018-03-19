@@ -13,12 +13,13 @@ from keras.models import model_from_json
 
 # input image dimensions
 img_width, img_height = 150, 150
+#img_width, img_height = 177, 177
 
 # the CIFAR10 images are RGB
 if K.image_data_format() == 'channels_first':
     input_shape = (3, img_width, img_height)
 else:
-    input_shape = (img_width, img_height, 3)
+    input_shape = (img_width, img_height,3)
 #input
 model = Sequential()
 model.add(Conv2D(32, (3, 3), input_shape=input_shape,padding='same'))
@@ -47,6 +48,7 @@ model.add(Dropout(0.2))
 #fully connected
 model.add(Flatten())
 model.add(Dense(100))
+
 model.add(Activation('relu'))
 model.add(Dropout(0.5))
 model.add(Dense(4))
@@ -91,7 +93,7 @@ testing = test_datagen.flow_from_directory(
 model.fit_generator(
         training,
         steps_per_epoch=10,
-        epochs=5,
+        epochs=30,
         validation_data=testing,
         validation_steps=2)
 
